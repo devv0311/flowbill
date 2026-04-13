@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlowBill — Invoicing for Freelancers</title>
+  <title>FlowBill — Get paid faster, with less effort</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span class="toast-icon"></span>
+    <span class="toast-msg"></span>
+  </div>
+
+  <!-- ── NAV ── -->
   <nav>
     <div class="nav-inner">
       <a class="logo" href="#">
-        <span class="logo-dot"></span>Flow<span>Bill</span>
+        <span class="logo-mark">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 3h10M2 7h7M2 11h5" stroke="#060809" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Flow<em>Bill</em>
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -23,83 +34,138 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a class="btn-nav" href="#pricing">Start Free</a>
+      <a class="btn-nav" href="#signup">Start free</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-left">
+
+        <!-- Left: copy -->
+        <div>
           <div class="hero-eyebrow">
-            <span class="badge-new">NEW</span>
-            <span class="badge-text">Invoice automation for independents</span>
+            <span class="badge-pill">New</span>
+            <span class="badge-text">Invoicing without the friction</span>
           </div>
-          <h1>Stop chasing.<br>Start getting <em>paid</em>.</h1>
-          <p>FlowBill creates professional invoices in seconds, tracks payments automatically, and follows up on late clients — so you can stay focused on the work you love.</p>
-          <div class="hero-cta">
-            <a class="btn-primary" href="#pricing">Try free for 14 days</a>
+          <h1>Stop chasing.<br>Start getting <strong>paid.</strong></h1>
+          <p class="hero-sub">FlowBill creates professional invoices in seconds, auto-calculates GST, and sends payment reminders — so you stay focused on your work, not your inbox.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#signup">
+              Try free for 14 days
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
             <a class="btn-ghost" href="#how">
               See how it works
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <div class="hero-trust">
-            <div class="trust-avatars">
-              <span class="av1">A</span>
-              <span class="av2">S</span>
-              <span class="av3">R</span>
-              <span class="av4">M</span>
+          <div class="hero-social-proof">
+            <div class="avatars">
+              <span class="av1">A</span><span class="av2">S</span>
+              <span class="av3">R</span><span class="av4">M</span>
             </div>
-            <span class="trust-text"><strong>2,400+</strong> freelancers trust FlowBill</span>
+            <div style="margin-left:18px">
+              <div class="proof-text"><strong>2,400+ freelancers</strong> across India</div>
+              <div class="stars">★★★★★ <span style="color:var(--text3);font-size:12px">4.9 / 5</span></div>
+            </div>
           </div>
         </div>
 
+        <!-- Right: interactive invoice app -->
         <div class="hero-visual">
-          <div class="floating-chip chip1">
-            <span class="chip-icon">✅</span>
-            <span>Payment received <span class="chip-green">+₹18,000</span></span>
-          </div>
-          <div class="mockup-card">
-            <div class="mockup-top">
-              <div class="mockup-logo">Flow<span>Bill</span></div>
-              <span class="mockup-badge">INVOICE #047</span>
+          <div class="invoice-app">
+
+            <!-- Titlebar -->
+            <div class="invoice-titlebar">
+              <div class="titlebar-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green-mac"></span>
+              </div>
+              <span class="titlebar-label">New Invoice</span>
+              <span class="titlebar-badge">Live preview</span>
             </div>
-            <div class="mockup-inv-title">Invoice to: Priya Sharma</div>
-            <div class="mockup-row">
-              <span class="label">UI Design — 3 screens</span>
-              <span>₹9,000</span>
-            </div>
-            <div class="mockup-row">
-              <span class="label">Revisions (2 rounds)</span>
-              <span>₹2,500</span>
-            </div>
-            <div class="mockup-row">
-              <span class="label">Logo deliverables</span>
-              <span>₹3,000</span>
-            </div>
-            <div class="mockup-total">
-              <span class="label">Total Due</span>
-              <span class="value">₹14,500</span>
-            </div>
-            <button class="mockup-btn">Send Invoice via WhatsApp / Email</button>
-          </div>
-          <div class="floating-chip chip2">
-            <span class="chip-icon">⚡</span>
-            <span>Invoice sent in <span class="chip-green">12 sec</span></span>
-          </div>
-        </div>
+
+            <!-- Invoice body -->
+            <div class="invoice-body">
+
+              <!-- Client + dates -->
+              <div class="inv-field-row">
+                <div class="inv-field full">
+                  <label>Client name</label>
+                  <input type="text" id="inv-client" placeholder="e.g. Priya Sharma" />
+                </div>
+              </div>
+              <div class="inv-field-row">
+                <div class="inv-field">
+                  <label>Invoice date</label>
+                  <input type="date" id="inv-date" />
+                </div>
+                <div class="inv-field">
+                  <label>Due date</label>
+                  <input type="date" id="inv-due" />
+                </div>
+              </div>
+
+              <!-- Line items -->
+              <div class="inv-items-header">
+                <span>Line items</span>
+                <button class="btn-add-item" onclick="addItem()">+ Add item</button>
+              </div>
+
+              <!-- Column headers -->
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) 52px 72px 26px;gap:6px;margin-bottom:6px;">
+                <span style="font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;">Description</span>
+                <span style="font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;text-align:right;">Qty</span>
+                <span style="font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;text-align:right;">Rate (₹)</span>
+                <span></span>
+              </div>
+
+              <div class="inv-items-list" id="inv-items-list"></div>
+
+              <!-- Totals -->
+              <div class="inv-totals">
+                <div class="inv-totals-row">
+                  <span>Subtotal</span>
+                  <span class="val" id="inv-subtotal">₹0</span>
+                </div>
+                <div class="inv-totals-row">
+                  <span>GST (18%)</span>
+                  <span class="val" id="inv-gst">₹0</span>
+                </div>
+                <div class="inv-totals-row grand">
+                  <span>Total Due</span>
+                  <span class="val" id="inv-total">₹0</span>
+                </div>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="inv-actions">
+                <button class="btn-inv btn-inv-primary" id="btn-send-invoice">
+                  <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                  Send Invoice
+                </button>
+                <button class="btn-inv btn-inv-secondary" id="btn-preview-invoice">
+                  <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Preview PDF
+                </button>
+              </div>
+
+            </div><!-- /invoice-body -->
+          </div><!-- /invoice-app -->
+        </div><!-- /hero-visual -->
+
       </div>
     </div>
   </section>
 
-  <!-- LOGOS BAR -->
+  <!-- ── LOGOS ── -->
   <div class="logos-bar">
     <div class="container">
-      <div class="logos-label">Used by freelancers at</div>
+      <div class="logos-label">Trusted by freelancers working with</div>
       <div class="logos-row">
         <span class="fake-logo">Dribbble</span>
         <span class="fake-logo">Behance</span>
@@ -111,229 +177,315 @@
     </div>
   </div>
 
-  <!-- FEATURES -->
+  <!-- ── FEATURES ── -->
   <section class="features" id="features">
     <div class="container">
-      <div class="features-header">
-        <div class="tag">Features</div>
-        <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
-        <p class="section-sub">Built specifically for solo freelancers — no accountant required, no bloated enterprise features.</p>
+      <div class="features-header reveal">
+        <div class="label-tag">Features</div>
+        <h2 class="section-title">Everything you need.<br><strong>Nothing you don't.</strong></h2>
+        <p class="section-sub">Built for solo freelancers. No accountant required, no bloated dashboards.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">⚡</div>
           <h3>One-click invoices</h3>
-          <p>Fill in the client, add your line items, and hit send. FlowBill generates a clean PDF in seconds — no templates to fiddle with.</p>
+          <p>Fill in the client, add line items, hit send. Clean PDF generated instantly — GST included automatically.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">🔔</div>
           <h3>Auto reminders</h3>
-          <p>Set it and forget it. FlowBill automatically nudges late clients at 3, 7, and 14 days — professionally, without the awkwardness.</p>
+          <p>FlowBill nudges late clients at 3, 7, and 14 days — professionally, without the awkward follow-up call.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">📊</div>
           <h3>Earnings dashboard</h3>
-          <p>See your monthly income, outstanding amounts, and top clients — at a glance, always up to date.</p>
+          <p>Monthly income, outstanding amounts, top clients — at a glance, always current.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">💸</div>
-          <h3>UPI & Bank transfer</h3>
-          <p>Add your UPI ID or bank details once. FlowBill attaches them to every invoice automatically. Getting paid is frictionless.</p>
+          <h3>UPI & bank ready</h3>
+          <p>Add your UPI ID once. FlowBill attaches it to every invoice. Getting paid is completely frictionless.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">🎨</div>
-          <h3>Brand your invoices</h3>
-          <p>Upload your logo, pick an accent color, and add a custom thank-you note. Every invoice feels like you — not a generic template.</p>
+          <h3>Branded invoices</h3>
+          <p>Upload your logo, pick a color. Every invoice looks like you designed it — because you did.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">📁</div>
           <h3>Client history</h3>
-          <p>All invoices per client in one place. Dispute a charge? See exactly what was sent, opened, and when. No more digging through email.</p>
+          <p>All invoices per client in one place. See what was sent, opened, and paid — no digging through email.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- ── HOW IT WORKS ── -->
   <section class="how" id="how">
     <div class="container">
       <div class="how-inner">
+
+        <!-- Left: steps -->
         <div>
-          <div class="tag">How it works</div>
-          <h2 class="section-title">From work done<br>to payment received.</h2>
-          <p class="section-sub">Three simple steps. No learning curve, no setup fees, no spreadsheets.</p>
+          <div class="label-tag reveal">How it works</div>
+          <h2 class="section-title reveal">From work done<br><strong>to money received.</strong></h2>
+          <p class="section-sub reveal">Three steps. No setup fee, no spreadsheets, no calls to your CA.</p>
           <div class="steps">
-            <div class="step">
+            <div class="step reveal">
               <div class="step-num">1</div>
               <div class="step-content">
                 <h4>Add your client & services</h4>
-                <p>Type the client name, describe what you delivered, and add a price. That's literally it.</p>
+                <p>Type the client name, describe what you delivered, set qty and rate. GST is auto-calculated.</p>
               </div>
             </div>
-            <div class="step">
+            <div class="step reveal">
               <div class="step-num">2</div>
               <div class="step-content">
                 <h4>Send via WhatsApp or Email</h4>
-                <p>One tap sends a PDF invoice directly — no downloading, no uploading, no copying links.</p>
+                <p>One tap sends a PDF invoice directly to your client — no downloading, no uploading.</p>
               </div>
             </div>
-            <div class="step">
+            <div class="step reveal">
               <div class="step-num">3</div>
               <div class="step-content">
                 <h4>Get paid. Track. Repeat.</h4>
-                <p>Mark as paid when money arrives. Your dashboard updates instantly. Build your client history automatically.</p>
+                <p>Mark as paid when money arrives. Dashboard updates instantly. History builds itself.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="how-visual">
-          <div class="how-visual-title">New Invoice</div>
-          <div class="form-row">
-            <div class="form-label">Client name</div>
-            <div class="form-input" style="color:var(--muted)">Priya Sharma — Startup Founder</div>
-          </div>
-          <div class="form-grid">
-            <div class="form-row">
-              <div class="form-label">Invoice date</div>
-              <div class="form-input" style="color:var(--muted)">04 Apr 2026</div>
+        <!-- Right: tabbed visual -->
+        <div class="reveal">
+          <div class="how-visual-panel">
+            <div class="how-panel-tabs">
+              <button class="how-tab active" data-tab="tab-overview">Overview</button>
+              <button class="how-tab" data-tab="tab-invoices">Invoices</button>
+              <button class="how-tab" data-tab="tab-earnings">Earnings</button>
             </div>
-            <div class="form-row">
-              <div class="form-label">Due date</div>
-              <div class="form-input" style="color:var(--muted)">11 Apr 2026</div>
+
+            <!-- Tab: Overview -->
+            <div class="how-tab-content active" id="tab-overview">
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="stat-val">₹<span>84,500</span></div>
+                  <div class="stat-label">Earned this month</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-val"><span>12</span></div>
+                  <div class="stat-label">Invoices sent</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-val"><span>₹18k</span></div>
+                  <div class="stat-label">Outstanding</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-val"><span>3.2</span>d</div>
+                  <div class="stat-label">Avg. payment time</div>
+                </div>
+              </div>
             </div>
+
+            <!-- Tab: Invoices -->
+            <div class="how-tab-content" id="tab-invoices">
+              <div class="inv-list-item">
+                <div>
+                  <div class="inv-list-name">Priya Sharma</div>
+                  <div class="inv-list-date">Due Apr 11, 2026</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-weight:700;font-size:14px">₹14,500</div>
+                  <span class="inv-status status-paid">Paid</span>
+                </div>
+              </div>
+              <div class="inv-list-item">
+                <div>
+                  <div class="inv-list-name">Rahul Mehta</div>
+                  <div class="inv-list-date">Due Apr 14, 2026</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-weight:700;font-size:14px">₹8,200</div>
+                  <span class="inv-status status-pending">Pending</span>
+                </div>
+              </div>
+              <div class="inv-list-item">
+                <div>
+                  <div class="inv-list-name">Nisha Kapoor</div>
+                  <div class="inv-list-date">Due Apr 2, 2026</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-weight:700;font-size:14px">₹22,000</div>
+                  <span class="inv-status status-overdue">Overdue</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab: Earnings -->
+            <div class="how-tab-content" id="tab-earnings">
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)">
+                  <span style="color:var(--text2)">January</span>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="background:var(--border);border-radius:3px;height:6px;width:80px;overflow:hidden"><div style="background:var(--green);height:100%;width:60%"></div></div>
+                    <span style="font-weight:700">₹51,000</span>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)">
+                  <span style="color:var(--text2)">February</span>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="background:var(--border);border-radius:3px;height:6px;width:80px;overflow:hidden"><div style="background:var(--green);height:100%;width:74%"></div></div>
+                    <span style="font-weight:700">₹63,400</span>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)">
+                  <span style="color:var(--text2)">March</span>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="background:var(--border);border-radius:3px;height:6px;width:80px;overflow:hidden"><div style="background:var(--green);height:100%;width:88%"></div></div>
+                    <span style="font-weight:700">₹75,800</span>
+                  </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:13px;padding:6px 0">
+                  <span style="color:var(--text2)">April (so far)</span>
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="background:var(--border);border-radius:3px;height:6px;width:80px;overflow:hidden"><div style="background:var(--green);height:100%;width:99%"></div></div>
+                    <span style="font-weight:700;color:var(--green)">₹84,500</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="form-label" style="margin-bottom:12px">Line items</div>
-          <div class="line-item">
-            <span>Landing page design</span>
-            <span class="item-total">₹8,000</span>
-          </div>
-          <div class="line-item">
-            <span>Mobile responsive fixes</span>
-            <span class="item-total">₹2,500</span>
-          </div>
-          <button class="add-item-btn">+ Add line item</button>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- ── PRICING ── -->
   <section class="pricing" id="pricing">
     <div class="container">
-      <div class="pricing-header">
-        <div class="tag">Pricing</div>
-        <h2 class="section-title">Honest pricing.<br>No nasty surprises.</h2>
-        <p class="section-sub">All plans include a 14-day free trial. No credit card required to start.</p>
+      <div class="pricing-header reveal">
+        <div class="label-tag">Pricing</div>
+        <h2 class="section-title">Honest pricing.<br><strong>No nasty surprises.</strong></h2>
+        <p class="section-sub">14-day free trial on all plans. No credit card required.</p>
       </div>
       <div class="pricing-grid">
 
-        <!-- FREE -->
-        <div class="price-card">
+        <!-- Free -->
+        <div class="price-card reveal">
           <div class="plan-name">Free</div>
-          <div class="plan-price"><sup>₹</sup>0</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">₹</span>
+            <span class="plan-amount">0</span>
+          </div>
           <div class="plan-period">Forever free</div>
           <ul class="plan-features">
-            <li class="active"><span class="check">✓</span> 5 invoices/month</li>
-            <li class="active"><span class="check">✓</span> 2 active clients</li>
-            <li class="active"><span class="check">✓</span> PDF export</li>
-            <li><span class="cross">✕</span> Auto reminders</li>
-            <li><span class="cross">✕</span> Custom branding</li>
-            <li><span class="cross">✕</span> Earnings dashboard</li>
+            <li class="on"><span class="feat-check">✓</span> 5 invoices / month</li>
+            <li class="on"><span class="feat-check">✓</span> 2 active clients</li>
+            <li class="on"><span class="feat-check">✓</span> PDF export</li>
+            <li><span class="feat-cross">✕</span> Auto reminders</li>
+            <li><span class="feat-cross">✕</span> Custom branding</li>
+            <li><span class="feat-cross">✕</span> Earnings dashboard</li>
           </ul>
-          <button class="btn-plan btn-plan-outline">Get started free</button>
+          <button class="btn-plan btn-plan-outline" onclick="showToast('✅','Starting free plan — no card needed!')">Get started free</button>
         </div>
 
-        <!-- PRO -->
-        <div class="price-card popular">
-          <span class="popular-badge">MOST POPULAR</span>
+        <!-- Pro -->
+        <div class="price-card popular reveal">
+          <span class="popular-badge">Most Popular</span>
           <div class="plan-name">Pro</div>
-          <div class="plan-price"><sup>₹</sup>299</div>
-          <div class="plan-period">per month, billed monthly</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">₹</span>
+            <span class="plan-amount">299</span>
+          </div>
+          <div class="plan-period">per month · billed monthly</div>
           <ul class="plan-features">
-            <li class="active"><span class="check">✓</span> Unlimited invoices</li>
-            <li class="active"><span class="check">✓</span> Unlimited clients</li>
-            <li class="active"><span class="check">✓</span> PDF export</li>
-            <li class="active"><span class="check">✓</span> Auto reminders</li>
-            <li class="active"><span class="check">✓</span> Custom branding</li>
-            <li class="active"><span class="check">✓</span> Earnings dashboard</li>
+            <li class="on"><span class="feat-check">✓</span> Unlimited invoices</li>
+            <li class="on"><span class="feat-check">✓</span> Unlimited clients</li>
+            <li class="on"><span class="feat-check">✓</span> PDF export</li>
+            <li class="on"><span class="feat-check">✓</span> Auto reminders</li>
+            <li class="on"><span class="feat-check">✓</span> Custom branding</li>
+            <li class="on"><span class="feat-check">✓</span> Earnings dashboard</li>
           </ul>
-          <button class="btn-plan btn-plan-fill">Start 14-day trial</button>
+          <button class="btn-plan btn-plan-fill" onclick="document.getElementById('signup-email').focus();document.getElementById('signup').scrollIntoView({behavior:'smooth'})">Start 14-day trial</button>
         </div>
 
-        <!-- STUDIO -->
-        <div class="price-card">
+        <!-- Studio -->
+        <div class="price-card reveal">
           <div class="plan-name">Studio</div>
-          <div class="plan-price"><sup>₹</sup>799</div>
-          <div class="plan-period">per month, billed monthly</div>
+          <div class="plan-price-wrap">
+            <span class="plan-currency">₹</span>
+            <span class="plan-amount">799</span>
+          </div>
+          <div class="plan-period">per month · billed monthly</div>
           <ul class="plan-features">
-            <li class="active"><span class="check">✓</span> Everything in Pro</li>
-            <li class="active"><span class="check">✓</span> Team members (3)</li>
-            <li class="active"><span class="check">✓</span> Client portal</li>
-            <li class="active"><span class="check">✓</span> GST invoicing</li>
-            <li class="active"><span class="check">✓</span> Priority support</li>
-            <li class="active"><span class="check">✓</span> API access</li>
+            <li class="on"><span class="feat-check">✓</span> Everything in Pro</li>
+            <li class="on"><span class="feat-check">✓</span> Team members (3)</li>
+            <li class="on"><span class="feat-check">✓</span> Client portal</li>
+            <li class="on"><span class="feat-check">✓</span> GST invoicing</li>
+            <li class="on"><span class="feat-check">✓</span> Priority support</li>
+            <li class="on"><span class="feat-check">✓</span> API access</li>
           </ul>
-          <button class="btn-plan btn-plan-outline">Contact sales</button>
+          <button class="btn-plan btn-plan-outline" onclick="showToast('📬','Our team will reach out within 24 hours.')">Contact sales</button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- ── FAQ ── -->
   <section class="faq" id="faq">
     <div class="container">
       <div class="faq-inner">
-        <div>
-          <div class="tag">FAQ</div>
-          <h2 class="section-title">Questions?<br>We've got answers.</h2>
-          <p class="section-sub" style="margin-top:12px">Still unsure? Email us at hello@flowbill.in — we reply within a few hours.</p>
+        <div class="faq-sticky reveal">
+          <div class="label-tag">FAQ</div>
+          <h2 class="section-title">Questions?<br><strong>We've got answers.</strong></h2>
+          <p class="section-sub" style="margin-top:14px">Anything else? Email <a href="/cdn-cgi/l/email-protection#4f272a2323200f292320382d262323612621" style="color:var(--green);text-decoration:none"><span class="__cf_email__" data-cfemail="adc5c8c1c1c2edcbc1c2dacfc4c1c183c4c3">[email&#160;protected]</span></a> — we reply same day.</p>
         </div>
         <div class="faq-list">
-          <div class="faq-item open">
+          <div class="faq-item open reveal">
             <button class="faq-question">
               Do I need a GST number to use FlowBill?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              No. FlowBill works perfectly for freelancers below the GST threshold. If you are GST-registered, the Studio plan supports full GST invoicing with IGST/CGST/SGST breakdown.
+              <div class="faq-answer-inner">No — FlowBill works perfectly for freelancers below the GST threshold. If you are registered, the Studio plan handles full GST invoicing with IGST, CGST, and SGST breakdown.</div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-question">
               Can I use FlowBill from my phone?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              Yes — FlowBill is fully responsive. You can create and send invoices directly from WhatsApp on your phone without ever opening a laptop.
+              <div class="faq-answer-inner">Yes — fully responsive. Create and send invoices directly from your phone, including via WhatsApp, without ever opening a laptop.</div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-question">
-              What happens after my 14-day trial ends?
+              What happens after the 14-day trial?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              You'll automatically drop to the Free plan — no charges, no card needed. Your invoice history is preserved. Upgrade whenever you're ready.
+              <div class="faq-answer-inner">You drop to the Free plan automatically — no charge, no card required. Your invoice history is preserved. Upgrade whenever you're ready.</div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-question">
-              Can my clients pay online through the invoice?
+              Can clients pay directly through the invoice?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              Not yet — but it's on our roadmap! Currently, clients see your UPI ID and bank details on the invoice and pay directly. Integrated UPI payments are coming in Q3 2026.
+              <div class="faq-answer-inner">Not yet, but it's coming. Right now clients see your UPI ID and bank details on the invoice and pay directly. Integrated UPI payments are on the roadmap for Q3 2026.</div>
             </div>
           </div>
-          <div class="faq-item">
+          <div class="faq-item reveal">
             <button class="faq-question">
-              How do I cancel if I don't like it?
+              How do I cancel if I change my mind?
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              Cancel anytime from your account settings — no forms, no calls, no drama. If you cancel in the middle of a billing period, you keep access until the cycle ends.
+              <div class="faq-answer-inner">Cancel from Settings anytime — no forms, no calls, no drama. You keep access until the end of your billing period.</div>
             </div>
           </div>
         </div>
@@ -341,26 +493,47 @@
     </div>
   </section>
 
-  <!-- CTA BANNER -->
-  <section class="cta-section">
+  <!-- ── SIGNUP ── -->
+  <section class="signup-section" id="signup">
     <div class="container">
-      <div class="cta-box">
-        <h2>Ready to get paid<br>without the hassle?</h2>
-        <p>Join 2,400+ freelancers who spend less time on invoicing and more time on work that matters.</p>
-        <div class="cta-buttons">
-          <a class="btn-primary" href="#pricing">Start free — no card needed</a>
-          <span class="no-cc">14-day trial · Cancel anytime</span>
+      <div class="signup-box reveal">
+        <div class="label-tag" style="display:inline-flex">Free for 14 days</div>
+        <h2 class="section-title">Ready to get paid<br><strong>without the hassle?</strong></h2>
+        <p class="section-sub">Join 2,400+ freelancers who spend less time invoicing and more time doing work they love.</p>
+
+        <form class="signup-form" id="signup-form" novalidate>
+          <input
+            type="email"
+            class="signup-input"
+            id="signup-email"
+            placeholder="Enter your email"
+            autocomplete="email"
+          />
+          <button type="submit" class="btn-primary">
+            Get started free
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="signup-success" id="signup-success">
+          <span style="font-size:22px">🎉</span>
+          You're in! Check your email for the sign-in link.
         </div>
+
+        <p class="signup-note">No credit card · Cancel anytime · Takes 30 seconds</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ── FOOTER ── -->
   <footer>
     <div class="container">
       <div class="footer-inner">
         <a class="logo" href="#">
-          <span class="logo-dot"></span>Flow<span>Bill</span>
+          <span class="logo-mark">
+            <svg viewBox="0 0 14 14" fill="none"><path d="M2 3h10M2 7h7M2 11h5" stroke="#060809" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          Flow<em>Bill</em>
         </a>
         <ul class="footer-links">
           <li><a href="#">Privacy</a></li>
@@ -368,11 +541,21 @@
           <li><a href="#">Contact</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
-        <span class="footer-copy">© 2026 FlowBill. Built for freelancers.</span>
+        <span class="footer-copy">© 2026 FlowBill. Simple invoicing for independent professionals.</span>
       </div>
     </div>
   </footer>
 
+
+  <script>
+    // Set default dates
+    const today = new Date();
+    const due   = new Date();
+    due.setDate(due.getDate() + 7);
+    const fmt = d => d.toISOString().split('T')[0];
+    document.getElementById('inv-date').value = fmt(today);
+    document.getElementById('inv-due').value  = fmt(due);
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
